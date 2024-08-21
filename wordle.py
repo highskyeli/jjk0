@@ -3,13 +3,35 @@ word = "CRATE"
 
 # TASK B: Define a function 'makeAGuess()' that passes in a users guess as a parameter
 
-makeAGuess(guess)
+def makeAGuess(guess):
+
+  
+
+  
+
+
+
+
 
   # TASK C:Define a variable 'hint' that holds an empty string
-hint = ""
+  hint = ""
 
   # TASK D: Build a loop that loops from 0 to the length of word
+  for i in range(5):
+
+    if guess[i] == word[i]:
+      hint += "G"
+
+    elif guess[i] in word:
+      hint += "Y"
+    
+    else:
+      hint += "-"
+
   
+  return hint
+
+
 
     # TASK E: Check if the current letter of guess matches the current letter of word. If so add the letter "G" to the hint
     
@@ -38,3 +60,6 @@ print("Let's play wordle! /n Guess the Wordle in 6 tries. Each guess must be a v
   
 
 # TASK N: After the loop has finished, meaning the user has run out of guesses, check if hint != "GGGGG". If so, the user has lost. Print a lose message. 
+
+
+print(makeAGuess("CLEAR"))
