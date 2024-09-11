@@ -40,10 +40,11 @@ if walk == "N":
     
 
 elif walk == "S":
-    mapopp = input(npccharacter.name + " Hello Fellow Traveler, I am the Traveler. I am here to help you find your way out of the forest. I have a map that will help you find your way out of the forest. Would you like to have it in your inventory? (y/n)")
+    mapopp = input(npccharacter.name + " Hello Fellow Traveler, I am the Traveler. I am here to help you find your way out of the forest. I have a map that will help you find your way out of the forest. But to gain the map, you must solve this puzzle. Would you like to have it in your inventory? (y/n)")
    
     if mapopp == "y":
         stepcounter()
+        playWordle
         maincharacter.inventory.append(Map.name)
         walk = input("You are still lost in a forest, where would you like to go? N/S/E/W? ")
     else:
