@@ -33,11 +33,34 @@ if walk == "N":
         stepcounter()
         maincharacter.inventory.append(flashlight.name)
         walk = input("You are still lost in a forest, where would you like to go? N/S/E/W? ")
+        if walk == "N":
+            walk2 = input("You are still lost in a forest, where would you like to go? N/S/E/W? ")
+            if walk2 == "N":
+                print("You are lost in the forest. Game Over.")
+            elif walk2 == "S":
+                mapopp = input(npccharacter.name + " Hello Fellow Traveler, I am the Traveler. I am here to help you find your way out of the forest. I have a map that will help you find your way out of the forest. But to gain the map, you must solve this puzzle. Would you like to have it in your inventory? (y/n)")
+                if mapopp == "y":
+                    stepcounter()
+                    playWordle()
+                    maincharacter.inventory.append(Map.name)
+                    walk = input("You are still lost in a forest, where would you like to go? N/S/E/W? ")
+                else:
+                    print("You are lost in the forest. Game Over.")
+            elif walk2 == "E":
+                print("You have been found by the skin walker. Game Over.")
+            elif walk2 == "W":
+                if flashlight.name in maincharacter.inventory and Map.name not in maincharacter.inventory:
+                    print("Find a map, you don't know where you are.")
+                elif flashlight.name not in maincharacter.inventory and Map.name in maincharacter.inventory:
+                    print("Look for a flashlight, you don't know where you are.")
+                elif flashlight.name in maincharacter.inventory and Map.name in maincharacter.inventory:
+                    print("You have found your way out. Congrats.")
+        elif walk == "S":
+            pass  # Add appropriate action for walking South
     else:
         print("You are lost in the forest. Game Over.")
 
-    print(steps)
-    
+    print(steps)    
 
 elif walk == "S":
     mapopp = input(npccharacter.name + " Hello Fellow Traveler, I am the Traveler. I am here to help you find your way out of the forest. I have a map that will help you find your way out of the forest. But to gain the map, you must solve this puzzle. Would you like to have it in your inventory? (y/n)")
