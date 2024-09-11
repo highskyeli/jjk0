@@ -1,5 +1,7 @@
-class Character:
 """
+
+class Character:
+
     Represents a character in the game.
     
     Attributes:
@@ -12,16 +14,18 @@ class Character:
         talk_to_player(player): Prints the appropriate dialogue response based on the player's message.
         receive_item(item): Adds the given item to the character's inventory.
     """
-        def __init__(self, name, health, inventory):
+
+class Character:
+    def __init__(self, name, health, inventory, rizz):
         self.name = name
         self.health = health
         self.inventory = inventory
-        self.dialogue = dialogue
+        
+        self.rizz = rizz
 
-    def talk_to_player(self, player):
-        for sentence in self.dialogue:
-            if player_msg == sentence:
-                print(self.dialogue[sentence])
 
     def receive_item(self, item):
         self.inventory.append(item) 
+
+
+

@@ -1,12 +1,47 @@
-import Character from character
-import Item from item
-import playWordle from wordle
+from character import Character
+from wordle import playWordle
+from item import Item0
+from steps import stepcounter
+import steps 
 
-print("Welcome to the game!")
-d1 = input("You come up to a field and see a star! Do you want to pick it up? (y/n)")
+
+flashlight = Item0("Flashlight", "Light")
+
+Map = Item0("Map", "Direction")
+
+
+maincharacter = Character("", 100, [], "" )
+maincharacter.name = input("Tell me your name brave warrior.")
+maincharacter.rizz = input("What level of Looksmax Mogger are you?")
+
+
+npccharacter = Character("The Traveler", 100, [], "")
+
+walk = input("You are lost in a forest, where would you like to go? N/S/E/W?")
+
+
+print("Welcome to the FOREST OF DOOM!!! Figure your way out of the forest before the skinwalker gets you. Work quick before you run out of steps. ")
+d1 = input("You come up to a farm and see a flashlight. Would you like to have it in your inventory. (y/n)")
+
 if d1 == "y":
-    star = Item("Star", "A shiny star", 10)
-    dla = input("You pick up the star and it shines brightly. Now you see a dude. Want to talk to him? (y/n)")
-    if dla == "y":
-        character = Character("Dude", 100, [], {"Hello": "Hello there!"})
-        character.talk_to_player("Hello")
+    stepcounter()
+    maincharacter.inventory.append(flashlight.name)
+    
+
+
+
+elif walk == "N":
+    stepcounter()
+    print(steps)
+    
+
+elif walk == "S": 
+    print(npccharacter.name + "")
+
+elif flashlight.name in maincharacter.inventory and Map.name not in maincharacter.inventory:
+    print()
+elif flashlight.name not in  maincharacter.inventory and Map.name in maincharacter.inventory:
+    print("Look for a flashlight, you don't know where you are.")
+
+
+print(steps)

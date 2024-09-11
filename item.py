@@ -1,10 +1,8 @@
-class Item:
-    def __init__(self, name, description):
+class Item0: 
+    def __init__(self, name, ability):
         self.name = name
-        self.description = description
-        self.points = points
+        self.ability = ability
 
-    def use_item(self, player):
-        player.health += self.points
-        self.points = 0
-        
+
+
+
